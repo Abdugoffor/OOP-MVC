@@ -35,9 +35,8 @@ class Route
         $action = self::$routes[$method][$path] ?? false;
 
         if (!$action) {
-            
+
             View::make(404, '404', [404, $path]);
-            // 404 page
         }
 
         // is_callable obyaektni ichida shunday method borligini tekshiradi
@@ -46,7 +45,7 @@ class Route
         }
 
         if (is_array($action)) {
-            // dd($action[0], $action[1]);
+            
             call_user_func_array([new $action[0], $action[1]], []);
         }
     }

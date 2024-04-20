@@ -2,6 +2,12 @@
 
 namespace App\Models;
 
-class User
+use Src\Database\Model;
+
+class User extends Model
 {
+    protected $table = 'users';
+
+    protected $filleable = ['name', 'tel', 'pas'];
+    
 }

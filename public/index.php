@@ -1,14 +1,15 @@
 <?php
 
-use Src\Support\Arr;
+use Src\Database\Database;
+use Src\Database\DB;
 
 require '../vendor/autoload.php';
 require '../config/debug.php';
 require '../routes/web.php';
 require '../src/Support/helpers.php';
 
+
+// $a = new Database;
+// dd($a->con['db_driver']);
+
 app()->run();
-dd(Arr::only(
-    ['username' => 'admin', 'email' => 'admin@gmail.com'],
-    ['username']
-));

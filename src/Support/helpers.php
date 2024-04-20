@@ -1,13 +1,16 @@
 <?php
 
 use Src\Application;
+use Src\Support\Hash;
 use Src\View\View;
 
-if (!function_exists('env')) {
 
-    function env($key, $default = null)
+if (!function_exists('hash')) {
+
+    function hash($data)
     {
-        return $_ENV[$key] ?? value($default);
+
+        Hash::make($data);
     }
 }
 
@@ -21,8 +24,13 @@ if (!function_exists('value')) {
 
 function view($view, $title, $models = [])
 {
-    // dd($title, $view, $models);
     View::make($view, $title, $models);
+}
+
+function redirect($url)
+{
+    header('Location: ' . $url);
+    exit;
 }
 
 function app()

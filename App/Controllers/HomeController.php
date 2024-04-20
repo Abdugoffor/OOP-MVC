@@ -2,31 +2,29 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+use Src\Support\Hash;
 use Src\View\View;
 
 class HomeController
 {
     public function index()
     {
-        $models = [
-            ['name' => 'admin'],
-            ['name' => 'user'],
-            ['name' => 'moderator'],
-            ['name' => 'manager'],
-            ['name' => 'test'],
-        ];
-
-        return view('index', 'Bosh saxifa', ['models' => $models]);
+        return view('index', 'Bosh saxifa');
     }
-
 
     public function about()
     {
-        return view('about', 'About saxifa');
+        $models = User::where('tel', '=', '+998941050405');
+
+        return view('about', 'About saxifa', $models);
     }
 
     public function contact()
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            dd($_FILES['rasm'], $_POST);
+        }
         return view('contact', 'Contact saxifa');
     }
 
