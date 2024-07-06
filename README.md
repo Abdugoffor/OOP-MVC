@@ -1,25 +1,27 @@
-# Your Project Title
+# Loyihaning nomi
 
-## Description
-Your project description goes here.
+## Tavsif
+Loyihangizning tavsifi bu yerda bo'ladi.
 
-## Installation
-Instructions for installation.
+## O'rnatish
+O'rnatish bo'yicha ko'rsatmalar.
 
-## Usage
-Instructions for usage.
+## Foydalanish
+Foydalanish bo'yicha ko'rsatmalar.
 
-### Example Code
-Here’s an example code snippet:
+### Misol Kod
+Bu yerda PHP kod misoli:
 
 ```html
-<pre id="code-snippet">
-    <code>
-        const example = "Hello, world!";
-        console.log(example);
+<pre id="php-code">
+    <code contenteditable="true">
+        <?php
+        echo "Salom, dunyo!";
+        ?>
     </code>
 </pre>
-<button onclick="copyToClipboard('#code-snippet')">Copy</button>
+<button id="copy-button" onclick="copyToClipboard('#php-code')">Nusxa olish</button>
+<button id="edit-button" onclick="toggleEditMode()">Tahrirlash</button>
 
 <script>
 function copyToClipboard(element) {
@@ -29,8 +31,22 @@ function copyToClipboard(element) {
   $temp.select();
   document.execCommand("copy");
   document.body.removeChild($temp);
-  alert("Copied to clipboard!");
+  alert("Clipboardga nusxa olindi!");
+}
+
+function toggleEditMode() {
+  var codeElement = document.querySelector('#php-code code');
+  var copyButton = document.getElementById('copy-button');
+  var editButton = document.getElementById('edit-button');
+
+  if (codeElement.contentEditable === "true") {
+    codeElement.contentEditable = "false";
+    editButton.textContent = "Tahrirlash";
+    copyButton.disabled = false;
+  } else {
+    codeElement.contentEditable = "true";
+    editButton.textContent = "Tahrirlashni yakunlash";
+    copyButton.disabled = true;
+  }
 }
 </script>
-```
-sdfsdfsdfsdf
