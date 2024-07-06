@@ -33,7 +33,9 @@ function copyToClipboard(element) {
   document.body.removeChild($temp);
   alert("Clipboardga nusxa olindi!");
 }
-
+```
+#bu test
+```html
 function toggleEditMode() {
   var codeElement = document.querySelector('#php-code code');
   var copyButton = document.getElementById('copy-button');
@@ -50,3 +52,9 @@ function toggleEditMode() {
   }
 }
 </script>
+```
+# bu test1
+```html
+text-copy
+```
+##text
